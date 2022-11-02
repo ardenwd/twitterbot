@@ -10,6 +10,9 @@ var mediaArtsSearch = {q: "#mediaarts", count: 10, result_type: "recent"};
 // This is the URL of a search for the latest tweet on the #arden hashtag.
 var ardenSearch = {q: "#arden", count: 10, result_type: "recent"}; 
 
+
+var worldSearch = {q: "from:W0rldPlaces", count: 1}; 
+
 // This function finds the latest tweet with the #arden hashtag, and retweets it.
 function retweetLatest(b) {
 	T.get('search/tweets', b, function (error, data) {
@@ -77,12 +80,12 @@ function drawWeather( d ) {
 	})
 }
 
-weatherBalloon();
+//weatherBalloon();
  
 
 
 // Try to retweet something as soon as we run the program...
-//retweetLatest();
+retweetLatest(worldSearch);
 // ...and then every hour after that. Time here is in milliseconds, so
 // 1000 ms = 1 second, 1 sec * 60 = 1 min, 1 min * 60 = 1 hour --> 1000 * 60 * 60
 //setInterval(retweetLatest, 1000 * 60 * 60);
