@@ -41,6 +41,12 @@ function retweetLatest(b) {
 //variable to fetch the date
 //
 
+//use this url
+//https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+//this is @w0rldplaces 's ID
+// 1494381135098527744
+
 //this function holds all the weather data in the data variable.
 function weatherBalloon( ) {
 	fetch('https://api.openweathermap.org/data/2.5/weather?id=6167865&appid=63588ea7e9daeb06402e7624198c6fe7')  
@@ -52,6 +58,7 @@ function weatherBalloon( ) {
 	  // catch any errors
 	});
   }
+
 function drawWeather( d ) {
 	var fahrenheit = (Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32)) + '&deg;';
 	var weatherStatus = {
